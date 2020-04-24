@@ -1,4 +1,4 @@
-g$(function(){
+$(function(){
 var operacao = "A"
 var indice_selecionado = -1
 var tbClientes = localStorage.getItem ("tbClientes");
