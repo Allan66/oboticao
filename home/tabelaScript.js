@@ -30,4 +30,4 @@ function mostrarTabela() {
 $(document).ready(function() {
 
     mostrarTabela();
-})
+});
