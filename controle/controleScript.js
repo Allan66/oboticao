@@ -25,19 +25,19 @@ function mostrarTabela() {
     });
 
 }
-$(document).ready(function () {
+$(document).ready(function() {
 
     mostrarTabela();
 });
-$(function () {
-    $("td").dblclick(function () {
+$(function() {
+    $("td").dblclick(function() {
         var conteudoOriginal = $(this).text();
 
         $(this).addClass("celulaEmEdicao");
         $(this).html("<input type='text' value='" + conteudoOriginal + "' />");
         $(this).children().first().focus();
 
-        $(this).children().first().keypress(function (e) {
+        $(this).children().first().keypress(function(e) {
             if (e.which == 13) {
                 var novoConteudo = $(this).val(); //Novo valor armazenado na variável
                 $(this).parent().text(novoConteudo);
@@ -45,7 +45,7 @@ $(function () {
             }
         });
 
-        $(this).children().first().blur(function () {
+        $(this).children().first().blur(function() {
             $(this).parent().text(conteudoOriginal);
             $(this).parent().removeClass("celulaEmEdicao");
         });
@@ -66,50 +66,50 @@ function tabelaVisitas() {
             "<td>" + elemento.NomeV + "</td>" +
             "<td>" + elemento.valorPorte + " </td>" +
             "<td>" + elemento.adicionais + " </td>" +
-            "<td>" + elemento.TabelaData + "</td>"+
-            "<td>" + elemento.Total  + "</td>"+ 
-            
+            "<td>" + elemento.TabelaData + "</td>" +
+            "<td>" + elemento.Total + "</td>" +
+
             "</tr>"
         )
     })
 }
-$(document).ready(function () {
+$(document).ready(function() {
 
     tabelaVisitas();
 });
 // Filtro das visitas
-$(function(){
-    $("#tbListarVisitas  input").keyup(function(){        
-        var index = $(this).parent().index();   // recebe o valor, parent retorna a coluna
-        var nth = "#tbListarVisitas td:nth-child("+(index+1).toString()+")"; // filtra a linha da tr
+$(function() {
+    $("#tbListarVisitas  input").keyup(function() {
+        var index = $(this).parent().index(); // recebe o valor, parent retorna a coluna
+        var nth = "#tbListarVisitas td:nth-child(" + (index + 1).toString() + ")"; // filtra a linha da tr
         var valor = $(this).val().toUpperCase(); // tira a diferença maiuscula minuscula
-        $("#tbListarVisitas tbody tr").show(); 
-        $(nth).each(function(){
-            if($(this).text().toUpperCase().indexOf(valor) < 0){
+        $("#tbListarVisitas tbody tr").show();
+        $(nth).each(function() {
+            if ($(this).text().toUpperCase().indexOf(valor) < 0) {
                 $(this).parent().hide();
             }
         });
     });
- 
-    $("#tbListarVisitas input").blur(function(){
+
+    $("#tbListarVisitas input").blur(function() {
         $(this).val("");
     });
 });
 //Filtro Cadastro
-$(function(){
-    $("#tbListar  input").keyup(function(){        
-        var index = $(this).parent().index();   // recebe o valor, parent retorna a coluna
-        var nth = "#tbListar td:nth-child("+(index+1).toString()+")"; // filtra a linha da tr
+$(function() {
+    $("#tbListar  input").keyup(function() {
+        var index = $(this).parent().index(); // recebe o valor, parent retorna a coluna
+        var nth = "#tbListar td:nth-child(" + (index + 1).toString() + ")"; // filtra a linha da tr
         var valor = $(this).val().toUpperCase(); // tira a diferença maiuscula minuscula
-        $("#tbListar tbody tr").show(); 
-        $(nth).each(function(){
-            if($(this).text().toUpperCase().indexOf(valor) < 0){
+        $("#tbListar tbody tr").show();
+        $(nth).each(function() {
+            if ($(this).text().toUpperCase().indexOf(valor) < 0) {
                 $(this).parent().hide();
             }
         });
     });
- 
-    $("#tbListar input").blur(function(){
+
+    $("#tbListar input").blur(function() {
         $(this).val("");
     });
 });

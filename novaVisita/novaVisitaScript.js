@@ -1,15 +1,13 @@
-
-
-$(document).ready(function () {
-    $(".form-check-input").change(function () {
-        var total = $(".form-check-input:checked").get().reduce(function (tot, el) {
+$(document).ready(function() {
+    $(".form-check-input").change(function() {
+        var total = $(".form-check-input:checked").get().reduce(function(tot, el) {
             return tot + Number(el.value);
         }, 0);
         $('#valorTotal').val(total);
     });
 
 
-    $('#tamanhoDog').on('change', function () {
+    $('#tamanhoDog').on('change', function() {
         var selectedValue = '#' + $(this).val();
         $('.opcoesPorte > div').hide();
         $(`${selectedValue}`).show();
@@ -18,7 +16,7 @@ $(document).ready(function () {
     });
 });
 // Guardando no local storage
-$(function () {
+$(function() {
     var operacao = "S"
     var tbVisitas = localStorage.getItem("tbVisitas");
     tbVisitas = JSON.parse(tbVisitas);
@@ -44,13 +42,15 @@ $(function () {
         alert("Visita agendada")
         return true
     }
+
     function adicionaisSelecionados() {
         let adicionais = ""
-        $('.adicionais:checked').each(function () {
+        $('.adicionais:checked').each(function() {
             adicionais += ($(this).attr("data-name") + "  ");
         })
         return adicionais
     }
+
     function valoresPorte() {
 
         let valorPorte = $($('.valorPorte:checked')[0]).attr('data-name')
@@ -59,7 +59,7 @@ $(function () {
     }
 
 
-    $("#frmVisita").on("submit", function () {
+    $("#frmVisita").on("submit", function() {
         if (operacao == "S")
             return novaVisita();
         else
@@ -77,4 +77,3 @@ $(function () {
 
 
 });
-

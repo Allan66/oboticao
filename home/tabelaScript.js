@@ -19,7 +19,7 @@ function mostrarTabela() {
             "<td>" + element.Endereco + " </td>" +
             "<td>" + element.Cidade + " </td>" +
             "</tr>"
-            
+
         )
         console.log(element)
     });

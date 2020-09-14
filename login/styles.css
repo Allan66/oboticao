@@ -1,17 +1,18 @@
-.login{
-    width: 400px; 
-    height: 150px; 
-    left: 50%; 
-    margin: -130px 0 0 -210px; 
-    padding:10px;
-    position: absolute; 
-    top: 50%; 
+.login {
+    width: 400px;
+    height: 150px;
+    left: 50%;
+    margin: -130px 0 0 -210px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
 }
 
-#btnlogin{
+#btnlogin {
     margin-left: 135px;
     margin-top: 5px;
 }
-#imgicone{
+
+#imgicone {
     margin-left: 42%;
 }

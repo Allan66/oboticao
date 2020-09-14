@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     var operacao = "A"
     var indice_selecionado = -1
     var tbClientes = localStorage.getItem("tbClientes");
@@ -39,7 +39,7 @@ $(function () {
             Contato2: $("#contato2").val(),
             Endereco: $("#endereco").val(),
             Cidade: $("#inputCity").val(),
-        });// Alterar cadastro selecionado
+        }); // Alterar cadastro selecionado
         localStorage.setItem("tbClientes", JSON.stringify(tbClientes));
         alert("Informações editadas!")
         operacao = "A"
@@ -76,47 +76,40 @@ $(function () {
 
 
 
-    }   
-    
+    }
 
-    $("#frmCadastro").on("submit", function () {
-    if (operacao == "A") {
-        return Adicionar();
-    }
-    else {
-        return Editar();
-    }
+
+    $("#frmCadastro").on("submit", function() {
+        if (operacao == "A") {
+            return Adicionar();
+        } else {
+            return Editar();
+        }
     })
 
-    
 
-    $("tblListar").on("click", "#btnEditar", function () {
-    operacao = "E";
-    indice_selecionado = parseInt($(this).attr("alt"));
-    var cli = JSON.parse(tbClientes[indice_selecionado]);
-    $("petName").val(cli.Nome);
-    $("tutorName").val(cli.Tutor);
-    $("inputRace").val(cli.Raca);
-    $("genero").val(cli.Genero);
-    $("pelagem").val(cli.Pelagem);
-    $("contato").val(cli.Contato1);
-    $("contato2").val(cli.Contato2);
-    $("endereco").val(cli.Endereco);
-    $("inputCity").val(cli.Cidade);
-    $("petName").focus();
+
+    $("tblListar").on("click", "#btnEditar", function() {
+        operacao = "E";
+        indice_selecionado = parseInt($(this).attr("alt"));
+        var cli = JSON.parse(tbClientes[indice_selecionado]);
+        $("petName").val(cli.Nome);
+        $("tutorName").val(cli.Tutor);
+        $("inputRace").val(cli.Raca);
+        $("genero").val(cli.Genero);
+        $("pelagem").val(cli.Pelagem);
+        $("contato").val(cli.Contato1);
+        $("contato2").val(cli.Contato2);
+        $("endereco").val(cli.Endereco);
+        $("inputCity").val(cli.Cidade);
+        $("petName").focus();
 
     })
-    $("#tblListar").on("click", "#btnExcluir", function () {
-    indice_selecionado = parseInt($(this).attr("alt"));
+    $("#tblListar").on("click", "#btnExcluir", function() {
+        indice_selecionado = parseInt($(this).attr("alt"));
 
-    Excluir();
-    Listar();
+        Excluir();
+        Listar();
     });
 
 });
-
-
-
-
-
-
